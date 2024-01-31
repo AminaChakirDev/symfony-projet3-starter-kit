@@ -33,3 +33,20 @@ h1{
   text-align: center;
   font-family:var(--font-family);
 }
+
+a{
+  font-family:var(--font-family) ;
+}
+
+.carousel-inner{
+  height: 500px;
+}
+
+.carousel-inner img{
+  
+  object-fit: cover;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+background-color: transparent;
+}
