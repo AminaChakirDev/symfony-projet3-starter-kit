@@ -18,11 +18,11 @@ class UserFixtures extends Fixture
 
   public function load(ObjectManager $manager): void
   {
-        $user = new User();
-        $user->setName('altyrion');
-        $user->setEmail('altyrion@hotmail.fr');
-        $user->setPassword($this->passwordHasher->hashPassword($user, 'azerty123'));
-        $user->setDescription(
+    $user = new User();
+    $user->setName('altyrion');
+    $user->setEmail('altyrion@hotmail.fr');
+    $user->setPassword($this->passwordHasher->hashPassword($user, 'azerty123'));
+    $user->setDescription(
       'Je suis passionné par l\'art et les innovations technologiques. 
               Toutefois, comme je ne sais ni peindre ni dessiner,
             l\'intelligence artificielle est devenue le pinceau avec lequel je peux illustrer 
