@@ -1,2 +1,34 @@
 //start coding by removing this file and adding yours ;)
-@import "wcs";
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+:root{
+  --background: rgb(238, 232, 232);
+  --font-family: 'Kaushan Script', cursive;
+}
+
+
+*{
+  background-color: var(--background);
+}
+
+body{
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+.navigation{
+  background-color: var(--background);
+}
+
+.logo{
+  padding: 1rem;
+  width:5rem;
+  height:5rem;
+  background-color: var(--background);
+}
+h1{
+  text-align: center;
+  font-family:var(--font-family);
+}
