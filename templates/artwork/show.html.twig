@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artwork{% endblock %}
+
+{% block body %}
+<h1>{{ artwork.name }}</h1>
+
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>{{ artwork.name }}</td>
+            </tr>
+	<section class=" py-5 py-xl-6">
+		<div class="container overflow-hidden">
+			<div class="row gy-3 g-md-3 hcf-isotope-grid">
+				<div class="col-12 col-md-6 col-lg-3 hcf-isotope-item">
+					<a class="hcf-masonry-card rounded rounded-4" href="#!">
+						<img class="card-img img-fluid" loading="lazy" src="{{ vich_uploader_asset(artwork) }}" alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+            <tr>
+                <th>Description</th>
+                <td>{{ artwork.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_artwork_index') }}">Retour aux oeuvres</a>
+&nbsp;|&nbsp;
+    <a href="{{ path('app_artwork_edit', {'id': artwork.id}) }}">Modifier</a>
+
+    {{ include('artwork/_delete_form.html.twig') }}
+{% endblock %}
