@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Artworks{% endblock %}
+{% block title %}Artworks
+{% endblock %}
 
 {% block body %}
 <div class="pink-stripe">
@@ -30,43 +31,15 @@
 
 
 
-{% for artwork in artworks %}
-<section class=" py-5 py-xl-6">
-<div class="container overflow-hidden">
-	<div class="row gy-3 g-md-3 hcf-isotope-grid">
-		<div class="col-12 col-md-6 col-lg-3 hcf-isotope-item">
-			<a class="hcf-masonry-card rounded rounded-4" href="#!">
-				<img class="card-img img-fluid" loading="lazy" src="{{ vich_uploader_asset(artwork) }}" alt="">
-				<div class="card-overlay d-flex flex-column justify-content-center bg-dark p-4" style="--bs-bg-opacity: .5;">
-					<h3 class="card-title text-white text-center mb-1">{{ artwork.name }}</h3>
-					<div class="card-category text-white text-center">Photography</div>
-				</div>
-			</a>
+	<div class="container">
+		<div id ="masonry"class="grid">
+			{% for artwork in artworks %}
+				<img class="grid-item" src="{{ vich_uploader_asset(artwork) }}" alt="{{ artwork.name }}" onclick="window.location.href='{{ path('app_artwork_show', {'id': artwork.id}) }}'">
+			{% endfor %}
 		</div>
-    </div>
-</div>
-</section>
-        
-        {% if app.user %}
-            <tr class="td-list">
-                <td class="td-list">{{ artwork.description }}</td>
-                <td class="td-list">
-                    
-                        <a href="{{ path('app_artwork_show', {'id': artwork.id}) }}">Voir l'Oeuvre</a>
-                        &nbsp;
-                        <a href="{{ path('app_artwork_edit', {'id': artwork.id}) }}">Modifier</a>
-                    {% endif %}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td class="td-list" colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+	</div>
+{% if app.user %}
+	<a href="{{ path('app_artwork_new') }}">Créer une nouvelle Oeuvre</a>
+{% endif %}
 
-    {% if app.user %}
-        <a href="{{ path('app_artwork_new') }}">Créer une nouvelle Oeuvre</a>
-    {% endif %}
 {% endblock %}

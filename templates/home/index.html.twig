@@ -30,7 +30,23 @@
 	</button>
 </div>
 
-    <div class="white-stripe">
-        <img src="" alt="">
-    </div>
+<h2 class="text-center mb-4">Dernières réalisations</h2>
+
+<div class="container">
+	<div class="row">
+		{% for artwork in artworks|slice(0, 3) %}
+			<div class="col-md-4 mb-3">
+				<div class="card h-100">
+					<img src="{{ vich_uploader_asset(artwork) }}" class="card-img-top" alt="{{ artwork.name }}">
+					<div class="card-body">
+						<h5 class="card-title">{{ artwork.name }}</h5>
+						<p class="card-text">{{ artwork.description }}</p>
+						
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>
+
 {% endblock %}
