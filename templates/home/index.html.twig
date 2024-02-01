@@ -37,7 +37,7 @@
 		{% for artwork in artworks|slice(0, 3) %}
 			<div class="col-md-4 mb-3">
 				<div class="card h-100">
-					<img src="{{ vich_uploader_asset(artwork) }}" class="card-img-top" alt="{{ artwork.name }}">
+					<img loading="lazy" src="{{ vich_uploader_asset(artwork) }}" class="card-img-top" alt="{{ artwork.name }}">
 					<div class="card-body">
 						<h5 class="card-title">{{ artwork.name }}</h5>
 						<p class="card-text">{{ artwork.description }}</p>
