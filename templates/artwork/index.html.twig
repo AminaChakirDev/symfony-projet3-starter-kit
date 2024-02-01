@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artworks{% endblock %}
+
+{% block body %}
+	<div class="pink-stripe">
+		<h1 class="bienvenue">Plongez dans mon univers</h1>
+	</div>
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="{{ asset('build/images/4.jpg')}}" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('build/images/dragon.jpg')}}" class="d-block w-100" alt="...">
+			</div>
+			<div class="carousel-item">
+				<img src="{{ asset('build/images/8.jpg')}}" class="d-block w-100" alt="...">
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+
+	<div class="white-stripe">
+		<img src="" alt="">
+	</div>
+
+  <h1>Artworks</h1>
+
+	<ul>
+		{% for artwork in artworks %}
+			<li>
+				<h2>{{ artwork.name }}</h2>
+				<img src="{{ artwork.pictureCover }}" alt="{{ artwork.name }}">
+				<p>{{ artwork.description }}</p>
+			</li>
+		{% else %}
+			<li>No artworks found.</li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}
+

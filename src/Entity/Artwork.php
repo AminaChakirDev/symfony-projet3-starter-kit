@@ -22,12 +22,14 @@ class Artwork
     #[ORM\Column(length: 400, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\ManyToOne(inversedBy: 'artworks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?User $user = null;
+
 
     #[ORM\ManyToOne(inversedBy: 'artworks')]
     private ?Category $category = null;
+
+    #[ORM\ManyToOne(inversedBy: 'artworks')]
+    private ?User $user = null;
 
     public function getId(): ?int
     {
@@ -70,17 +72,6 @@ class Artwork
         return $this;
     }
 
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): static
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 
     public function getCategory(): ?Category
     {
@@ -90,6 +81,18 @@ class Artwork
     public function setCategory(?Category $category): static
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }

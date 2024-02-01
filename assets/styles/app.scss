@@ -42,11 +42,20 @@ a{
   height: 500px;
 }
 
-.carousel-inner img{
-  
-  object-fit: cover;
+.carousel-inner img {
+    object-fit: fill;
+
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon{
 background-color: transparent;
+}
+
+.navbar-nav .nav-link.active {
+    color: rgb(132, 79, 205); /* couleur du menu au click */
+}
+
+.blur-effect {
+    color: transparent;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
 }
