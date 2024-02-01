@@ -17,6 +17,22 @@
 					<a class="nav-link blur-effect" href="#">Catégories</a>
 				</li>
 			</ul>
+			<div class="connection ms-auto">
+				<ul>
+					{% if app.user %}
+						<li>Bienvenue,
+							{{ app.user.name ? app.user.name : app.user.email }}</li>
+						<li>
+							<a href="{{ path('app_logout') }}">Déconnexion</a>
+						</li>
+					{% else %}
+						<li>
+							<a href="{{ path('app_login') }}">Connexion</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+
 		</div>
 	</div>
 </nav>
