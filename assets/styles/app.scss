@@ -1,17 +1,12 @@
-//start coding by removing this file and adding yours ;)
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-:root{
+
+:root {
   --background: rgb(238, 232, 232);
   --font-family: 'Kaushan Script', cursive;
   --color: rgb(132, 79, 205);
 }
 
-
-*{
-  background-color: var(--background);
-}
-
-body{
+* {
   background-color: var(--background);
   padding: 0;
   margin: 0;
@@ -19,201 +14,141 @@ body{
   box-sizing: border-box;
   text-decoration: none;
 }
-.navbar{
+
+body {
   background-color: var(--background);
-  padding: 0;
+  font-family: var(--font-family);
 }
 
-.logo{
+.navbar {
+  background-color: var(--background);
+}
+
+.logo {
   padding: 1rem;
-  width:5rem;
-  height:5rem;
+  width: 5rem;
+  height: 5rem;
   background-color: var(--background);
 }
-h1{
+
+h1 {
   text-align: center;
-  font-family:var(--font-family);
+  font-family: var(--font-family);
 }
 
-a{
-  font-family:var(--font-family) ;
+a {
+  font-family: var(--font-family);
+  color: var(--color);
 }
 
-.carousel-inner{
+.carousel-inner {
   height: 500px;
 }
 
 .carousel-inner img {
-    object-fit: fill;
-
+  object-fit: fill;
 }
 
-.carousel-control-prev-icon, .carousel-control-next-icon{
-background-color: transparent;
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: transparent;
 }
 
 .navbar-nav .nav-link.active {
-    color: var(--color); /* couleur du menu au click */
+  color: var(--color);
 }
 
-.blur-effect {
-    color: transparent;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.5);
-}
-
-.connection ul{
-
+.connection ul {
   list-style: none;
-
 }
 
-.g-6,
-.gx-6 {
-  --bs-gutter-x: 4.5rem;
-}
-.g-6,
-.gy-6 {
-  --bs-gutter-y: 4.5rem;
-}
-@media (min-width: 576px) {
-  .g-sm-6,
-  .gx-sm-6 {
-    --bs-gutter-x: 4.5rem;
-  }
-  .g-sm-6,
-  .gy-sm-6 {
-    --bs-gutter-y: 4.5rem;
-  }
-}
-@media (min-width: 768px) {
-  .g-md-6,
-  .gx-md-6 {
-    --bs-gutter-x: 4.5rem;
-  }
-  .g-md-6,
-  .gy-md-6 {
-    --bs-gutter-y: 4.5rem;
-  }
-}
-@media (min-width: 992px) {
-  .g-lg-6,
-  .gx-lg-6 {
-    --bs-gutter-x: 4.5rem;
-  }
-  .g-lg-6,
-  .gy-lg-6 {
-    --bs-gutter-y: 4.5rem;
-  }
-}
-@media (min-width: 1200px) {
-  .g-xl-6,
-  .gx-xl-6 {
-    --bs-gutter-x: 4.5rem;
-  }
-  .g-xl-6,
-  .gy-xl-6 {
-    --bs-gutter-y: 4.5rem;
-  }
-}
-@media (min-width: 1400px) {
-  .g-xxl-6,
-  .gx-xxl-6 {
-    --bs-gutter-x: 4.5rem;
-  }
-  .g-xxl-6,
-  .gy-xxl-6 {
-    --bs-gutter-y: 4.5rem;
-  }
-}
 .py-6 {
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important;
 }
-@media (min-width: 576px) {
-  .py-sm-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
+
+/* Masonry Grid Styles */
+.grid {
+  margin-left: -10px; /* Gutter offset */
+  margin-right: -10px; /* Gutter offset */
+}
+
+.grid-item {
+  width: calc(33.333% - 20px); /* For three columns */
+  margin-bottom: 1rem;
+  padding-left: 10px; /* Gutter offset */
+  padding-right: 10px; /* Gutter offset */
+  background: #fff; /* White background for images */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-item {
+    width: calc(50% - 20px); /* For two columns on medium screens */
   }
 }
-@media (min-width: 768px) {
-  .py-md-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
+
+@media (max-width: 480px) {
+  .grid-item {
+    width: calc(100% - 20px); /* Single column on small screens */
   }
 }
-@media (min-width: 992px) {
-  .py-lg-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
-  }
+
+/* Card Styles */
+.card {
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s;
 }
-@media (min-width: 1200px) {
-  .py-xl-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
-  }
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
 }
-@media (min-width: 1400px) {
-  .py-xxl-6 {
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
-  }
-}
-.hcf-masonry-card {
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-.hcf-masonry-card .card-img {
+
+.card-img-top {
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  transform: scale(1);
-  transition: transform 150ms linear;
 }
-.hcf-masonry-card .card-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
+
+.card-body {
+  padding: 1rem;
 }
-.hcf-masonry-card .card-overlay .card-title {
-  display: inline-block;
-  transform: translateY(10px);
-  opacity: 0;
+
+.card-title {
+  margin-bottom: 1rem;
 }
-.hcf-masonry-card .card-overlay .card-category {
-  transform: translateY(10px);
-  opacity: 0;
+
+.card-text {
+  font-size: 0.9em;
 }
-.hcf-masonry-card:hover .card-img {
-  transform: scale(1.05);
-  transition: transform 150ms linear;
+
+/* Additional styles */
+.img-fluid {
+  border-radius: 1rem;
 }
-.hcf-masonry-card:hover .card-overlay {
+
+/* Ensure images don't have additional space below them */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Clearfix for Masonry */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+div#masonry:hover img { 
+  opacity: 0.3;
+}
+div#masonry img:hover {
   opacity: 1;
-  transition: opacity 150ms linear;
-}
-.hcf-masonry-card:hover .card-overlay .card-title {
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 150ms linear 0.1s, opacity 150ms linear 0.1s;
-}
-.hcf-masonry-card:hover .card-overlay .card-category {
-  opacity: 1;
-  transform: translateY(0);
-  transition: transform 150ms linear 0.2s, opacity 150ms linear 0.2s;
 }
 
-.card-title, .card-category{
-  background-color: transparent;
+div#masonry img {
+  transition: 0.5s;
 }
 
-.td-list{
-  background-color: var(--background);
-}
-
-
-.connection a{
-  color: var(--color);
-}
