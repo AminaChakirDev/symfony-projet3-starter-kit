@@ -34,7 +34,7 @@
 	<div class="container">
 		<div id ="masonry"class="grid">
 			{% for artwork in artworks %}
-				<img class="grid-item" src="{{ vich_uploader_asset(artwork) }}" alt="{{ artwork.name }}" onclick="window.location.href='{{ path('app_artwork_show', {'id': artwork.id}) }}'">
+				<img class="grid-item" loading="lazy" src="{{ vich_uploader_asset(artwork) }}" alt="{{ artwork.name }}" onclick="window.location.href='{{ path('app_artwork_show', {'id': artwork.id}) }}'">
 			{% endfor %}
 		</div>
 	</div>

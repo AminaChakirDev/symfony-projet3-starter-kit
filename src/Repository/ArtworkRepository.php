@@ -21,7 +21,7 @@ class ArtworkRepository extends ServiceEntityRepository
         parent::__construct($registry, Artwork::class);
     }
 
-    public function findLatest(): Artwork
+    public function findLatest(): array
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.id', 'DESC')
