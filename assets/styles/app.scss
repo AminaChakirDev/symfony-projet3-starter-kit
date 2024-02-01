@@ -3,6 +3,7 @@
 :root{
   --background: rgb(238, 232, 232);
   --font-family: 'Kaushan Script', cursive;
+  --color: rgb(132, 79, 205);
 }
 
 
@@ -52,7 +53,7 @@ background-color: transparent;
 }
 
 .navbar-nav .nav-link.active {
-    color: rgb(132, 79, 205); /* couleur du menu au click */
+    color: var(--color); /* couleur du menu au click */
 }
 
 .blur-effect {
@@ -210,4 +211,9 @@ background-color: transparent;
 
 .td-list{
   background-color: var(--background);
+}
+
+
+.connection a{
+  color: var(--color);
 }
