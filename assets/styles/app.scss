@@ -1,2 +1,155 @@
-//start coding by removing this file and adding yours ;)
-@import "wcs";
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+  --background: rgb(238, 232, 232);
+  --font-family: 'Kaushan Script', cursive;
+  --color: rgb(132, 79, 205);
+}
+
+* {
+  background-color: var(--background);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background);
+  font-family: var(--font-family);
+}
+
+.navbar {
+  padding: 0;
+  background-color: var(--background);
+}
+
+.logo {
+  padding: 1rem;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--background);
+}
+
+h1 {
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+a {
+  font-family: var(--font-family);
+  color: var(--color);
+}
+
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-inner img {
+  object-fit: fill;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: transparent;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--color);
+}
+
+.connection ul {
+  list-style: none;
+}
+
+.py-6 {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+}
+
+/* Masonry Grid Styles */
+.grid {
+  margin-left: -10px; /* Gutter offset */
+  margin-right: -10px; /* Gutter offset */
+}
+
+.grid-item {
+  width: calc(33.333% - 20px); /* For three columns */
+  margin-bottom: 1rem;
+  padding-left: 10px; /* Gutter offset */
+  padding-right: 10px; /* Gutter offset */
+  background: #fff; /* White background for images */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-item {
+    width: calc(50% - 20px); /* For two columns on medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    width: calc(100% - 20px); /* Single column on small screens */
+  }
+}
+
+/* Card Styles */
+.card {
+  box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  margin-bottom: 1rem;
+}
+
+.card-text {
+  font-size: 0.9em;
+}
+
+/* Additional styles */
+.img-fluid {
+  border-radius: 1rem;
+}
+
+/* Ensure images don't have additional space below them */
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Clearfix for Masonry */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+div#masonry:hover img { 
+  opacity: 0.3;
+}
+div#masonry img:hover {
+  opacity: 1;
+}
+
+div#masonry img {
+  transition: 0.5s;
+}
+
