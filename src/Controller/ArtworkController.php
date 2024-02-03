@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Artwork;
 use App\Form\ArtworkType;
 use App\Repository\ArtworkRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -71,11 +72,26 @@ class ArtworkController extends AbstractController
     #[Route('/{id}', name: 'app_artwork_delete', methods: ['POST'])]
     public function delete(Request $request, Artwork $artwork, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$artwork->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $artwork->getId(), $request->request->get('_token'))) {
             $entityManager->remove($artwork);
             $entityManager->flush();
         }
 
         return $this->redirectToRoute('app_artwork_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/category/{categoryName}', name: 'app_artworks_by_category', methods: ['GET'])]
+    public function indexByCategory(
+        ArtworkRepository $artworkRepository,
+        CategoryRepository $categoryRepository,
+        string $categoryName
+    ): Response {
+        $category = $categoryRepository->findOneBy(['name' => $categoryName]);
+        $artworks = $artworkRepository->findBy(['category' => $category]);
+
+        return $this->render('artwork/indexByCategory.html.twig', [
+            'artworks' => $artworks,
+            'category' => $category,
+        ]);
     }
 }
